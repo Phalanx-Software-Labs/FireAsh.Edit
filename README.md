@@ -8,7 +8,7 @@ This repository only ships the **debug APK** at the root. Cloning the default zi
 
 **[FireAshCheatEngine-debug.apk](https://github.com/Phalanx-Software-Labs/FireAsh-CheatEngine/raw/main/FireAshCheatEngine-debug.apk)**
 
-Install on your device, grant folder access, pick the game folder that contains **`Data`**, then use **Install bag-cheat mod** or **Restore original scripts**.
+Install on your device, grant folder access, pick the game folder that contains **`Data`**, then use **Add mods** or **Remove mods**.
 
 ---
 
