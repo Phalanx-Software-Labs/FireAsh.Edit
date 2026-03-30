@@ -3,4 +3,18 @@
 /*
 !/.gitignore
 !/README.md
-!/FireAshCheatEngine-debug.apk
+
+# Debug APK lives where Android Studio / Gradle writes it (no copy to repo root).
+!/fireash-scripatcher/
+/fireash-scripatcher/*
+!/fireash-scripatcher/app/
+/fireash-scripatcher/app/*
+!/fireash-scripatcher/app/build/
+/fireash-scripatcher/app/build/*
+!/fireash-scripatcher/app/build/outputs/
+/fireash-scripatcher/app/build/outputs/*
+!/fireash-scripatcher/app/build/outputs/apk/
+/fireash-scripatcher/app/build/outputs/apk/*
+!/fireash-scripatcher/app/build/outputs/apk/debug/
+/fireash-scripatcher/app/build/outputs/apk/debug/*
+!/fireash-scripatcher/app/build/outputs/apk/debug/app-debug.apk
