@@ -19,7 +19,7 @@ At the **repository root**: **`FireAsh.Edit.apk`**.
 
 Raw link (for direct installs):
 
-**https://github.com/Phalanx-Software-Labs/FireAsh-CheatEngine/raw/main/FireAsh.Edit.apk**
+**https://github.com/Phalanx-Software-Labs/FireAsh.Edit/raw/main/FireAsh.Edit.apk**
 
 Install on your device, grant folder access, pick the game folder that contains **`Data`**, then use **Add mods** or **Remove mods**.
 
