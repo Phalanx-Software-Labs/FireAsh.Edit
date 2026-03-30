@@ -1,0 +1,16 @@
+# Android / Gradle
+**/build/
+.gradle/
+local.properties
+*.iml
+
+# IDE
+.idea/
+
+# Outputs (add APK here intentionally later if you want it tracked)
+*.apk
+*.aab
+
+# OS
+.DS_Store
+Thumbs.db
