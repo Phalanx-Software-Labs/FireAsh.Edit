@@ -26,6 +26,8 @@ copy Game\Data\Scripts.rxdata fireash-scripatcher\app\src\main\assets\patched_Sc
 
 ## Android: build the installer
 
-Open **`fireash-scripatcher`** in Android Studio → **Build → Build APK(s)**. Install the debug APK on your device, grant folder access, select the game folder that contains **`Data`**, tap install.
+Open **`fireash-scripatcher`** in Android Studio → **Build → Generate App Bundles or APKs → Generate APKs**. Install the debug APK on your device, grant folder access, select the game folder that contains **`Data`**, tap install.
+
+A prebuilt debug installer is also committed as **`fireash-scripatcher/releases/FireAshModInstaller-debug.apk`** (same as `app/build/outputs/apk/debug/app-debug.apk` after a local build).
 
 **Note:** `patched_Scripts.rxdata` in assets must match the game version you play.

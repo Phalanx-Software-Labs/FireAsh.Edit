@@ -7,8 +7,10 @@ local.properties
 # IDE
 .idea/
 
-# Outputs (add APK here intentionally later if you want it tracked)
+# APKs (tracked copy lives in fireash-scripatcher/releases/)
 *.apk
+!fireash-scripatcher/releases/
+!fireash-scripatcher/releases/*.apk
 *.aab
 
 # OS
