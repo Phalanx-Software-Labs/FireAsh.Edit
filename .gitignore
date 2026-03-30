@@ -1,18 +1,6 @@
-# Android / Gradle
-**/build/
-.gradle/
-local.properties
-*.iml
-
-# IDE
-.idea/
-
-# APKs (tracked copy lives in fireash-scripatcher/releases/)
-*.apk
-!fireash-scripatcher/releases/
-!fireash-scripatcher/releases/*.apk
-*.aab
-
-# OS
-.DS_Store
-Thumbs.db
+# This repository only tracks the installer APK (and README + this file).
+# Everything else stays on your machine for development but is not pushed.
+/*
+!/.gitignore
+!/README.md
+!/FireAshModInstaller-debug.apk
