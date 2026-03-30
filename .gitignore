@@ -2,6 +2,9 @@
 /*
 !/.gitignore
 !/FireAshCheatEngine.apk
+!/FireAsh_Vanilla_Scripts.rxdata
+!/scripts/
+!/scripts/sync_patched_scripts_to_apk.ps1
 !/developer/
 /developer/*
 !/developer/README.md
