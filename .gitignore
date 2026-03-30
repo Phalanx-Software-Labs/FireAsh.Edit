@@ -1,20 +1,7 @@
-# This repository only tracks the cheat-engine APK (and README + this file).
-# Everything else stays on your machine for development but is not pushed.
+# Root of the repo is for the downloadable APK only. Everything else lives under developer/.
 /*
 !/.gitignore
-!/README.md
-
-# Debug APK lives where Android Studio / Gradle writes it (no copy to repo root).
-!/fireash-scripatcher/
-/fireash-scripatcher/*
-!/fireash-scripatcher/app/
-/fireash-scripatcher/app/*
-!/fireash-scripatcher/app/build/
-/fireash-scripatcher/app/build/*
-!/fireash-scripatcher/app/build/outputs/
-/fireash-scripatcher/app/build/outputs/*
-!/fireash-scripatcher/app/build/outputs/apk/
-/fireash-scripatcher/app/build/outputs/apk/*
-!/fireash-scripatcher/app/build/outputs/apk/debug/
-/fireash-scripatcher/app/build/outputs/apk/debug/*
-!/fireash-scripatcher/app/build/outputs/apk/debug/app-debug.apk
+!/FireAshCheatEngine.apk
+!/developer/
+/developer/*
+!/developer/README.md
