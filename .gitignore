@@ -1,6 +1,6 @@
-# This repository only tracks the installer APK (and README + this file).
+# This repository only tracks the cheat-engine APK (and README + this file).
 # Everything else stays on your machine for development but is not pushed.
 /*
 !/.gitignore
 !/README.md
-!/FireAshModInstaller-debug.apk
+!/FireAshCheatEngine-debug.apk
