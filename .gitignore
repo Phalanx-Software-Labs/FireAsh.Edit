@@ -1,10 +1,11 @@
 # Root of the repo is for the downloadable APK only. Everything else lives under developer/.
 /*
 !/.gitignore
-!/FireAshCheatEngine.apk
+!/FireAsh.Edit.apk
 !/FireAsh_Vanilla_Scripts.rxdata
 !/scripts/
 !/scripts/sync_patched_scripts_to_apk.ps1
+!/scripts/verify_fire_ash_scripts_version.rb
 !/developer/
 /developer/*
 !/developer/README.md
