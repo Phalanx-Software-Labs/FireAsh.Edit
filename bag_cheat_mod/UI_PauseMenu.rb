@@ -262,8 +262,8 @@ class PokemonPauseMenu
       elsif cmdMods>=0 && command==cmdMods
         pbPlayDecisionSE
         pbFadeOutIn {
-          scene = PokemonBagCheat_Scene.new
-          screen = PokemonBagCheatScreen.new(scene)
+          scene = ::PokemonBagCheat_Scene.new
+          screen = ::PokemonBagCheatScreen.new(scene)
           screen.pbStartScreen
           pbUpdateSceneMap
           @scene.pbRefresh
