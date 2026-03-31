@@ -1,0 +1,9 @@
+FireAsh.Edit for Windows — what to download
+
+Download: FireAsh.Edit.exe (from GitHub Releases, or from the green "Actions" build as a zip).
+
+Double-click FireAsh.Edit.exe to run it.
+
+You do not install Python. You do not install anything else. The exe is the whole program.
+
+If Windows shows "Windows protected your PC", choose More info → Run anyway (we are not a signed Microsoft publisher yet).
