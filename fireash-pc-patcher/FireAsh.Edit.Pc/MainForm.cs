@@ -73,8 +73,8 @@ internal sealed class MainForm : Form
         {
             Text =
                 "Supported game: Pokémon Fire Ash 3.6 Part 2.2 only. Pick the folder that contains the Data folder " +
-                "(same as on Android). Add mods creates Data/Scripts.rxdata.backup once. Remove mods uses that backup, " +
-                "or bundled vanilla if no backup.",
+                "(same as on Android). Add mods creates Data/Scripts.rxdata.backup once. Remove mods restores only " +
+                "from that backup.",
             Left = padding,
             Top = y,
             Width = ClientSize.Width - 2 * padding,
@@ -375,17 +375,12 @@ internal sealed class MainForm : Form
             return;
         }
 
-        var vanillaPath = Path.Combine(AppContext.BaseDirectory, "vanilla_Scripts.rxdata");
-        byte[]? vanilla = null;
-        if (File.Exists(vanillaPath))
-            vanilla = await File.ReadAllBytesAsync(vanillaPath);
-
         SetBusy(true);
         try
         {
             await Task.Run(() =>
             {
-                ScriptPatchOperations.RemoveMods(root, vanilla, msg => BeginInvoke(() => Log(msg)));
+                ScriptPatchOperations.RemoveMods(root, msg => BeginInvoke(() => Log(msg)));
             });
             Log("Done.");
             MessageBox.Show(this, "Remove mods completed successfully.", Text, MessageBoxButtons.OK, MessageBoxIcon.Information);

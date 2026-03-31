@@ -11,23 +11,18 @@ repo_root = spec_dir.parent
 # Prefer fireash-pc-patcher/assets/ so a small GitHub folder can ship without the full Android tree.
 local_a = spec_dir / "assets"
 local_p = local_a / "patched_Scripts.rxdata"
-local_v = local_a / "vanilla_Scripts.rxdata"
-if local_p.is_file() and local_v.is_file():
-    patched, vanilla = local_p, local_v
+if local_p.is_file():
+    patched = local_p
 else:
-    assets = repo_root / "fireash-scripatcher" / "app" / "src" / "main" / "assets"
-    patched = assets / "patched_Scripts.rxdata"
-    vanilla = assets / "vanilla_Scripts.rxdata"
+    patched = repo_root / "fireash-scripatcher" / "app" / "src" / "main" / "assets" / "patched_Scripts.rxdata"
 
 if not patched.is_file():
     raise SystemExit(
         f"Missing patched asset. Either:\n"
-        f"  Put files in {local_a}\\ (patched + vanilla Scripts.rxdata), or\n"
+        f"  Put patched_Scripts.rxdata in {local_a}\\, or\n"
         f"  Run scripts\\sync_patched_scripts_to_apk.ps1 and use fireash-scripatcher assets.\n"
         f"Looked for: {patched}"
     )
-if not vanilla.is_file():
-    raise SystemExit(f"Missing vanilla asset: {vanilla}")
 
 tk_datas, tk_binaries, tk_hidden = collect_all("tkinter")
 
@@ -37,7 +32,6 @@ a = Analysis(
     binaries=tk_binaries,
     datas=[
         (str(patched), "."),
-        (str(vanilla), "."),
     ]
     + tk_datas,
     hiddenimports=list(tk_hidden),

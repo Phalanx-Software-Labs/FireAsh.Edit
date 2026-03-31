@@ -284,7 +284,7 @@ def install_patch(game_root: str, patched_bytes: bytes, log) -> None:
     log("Add mods finished: Data/Scripts.rxdata is now the patched file.")
 
 
-def remove_mods(game_root: str, vanilla_bytes: bytes | None, log) -> None:
+def remove_mods(game_root: str, log) -> None:
     data_dir = resolve_data_dir(game_root)
     scripts = data_dir / "Scripts.rxdata"
     backup = data_dir / "Scripts.rxdata.backup"
@@ -305,36 +305,29 @@ def remove_mods(game_root: str, vanilla_bytes: bytes | None, log) -> None:
         log("Remove mods finished: restored from backup.")
         return
 
-    if vanilla_bytes:
-        log("No usable backup — restoring from bundled vanilla_Scripts.rxdata.")
-        tmp = data_dir / PATCH_TEMP_NAME
-        if tmp.is_file():
-            _delete_retry(tmp, log)
-        tmp.write_bytes(vanilla_bytes)
-        _delete_retry(scripts, log)
-        _move_or_replace(tmp, scripts, log)
-        log("Remove mods finished: restored vanilla scripts from app bundle.")
-        return
-
     raise OSError(
         "No Scripts.rxdata.backup found. Use Add mods once while Scripts.rxdata is still vanilla "
         "to create that backup."
     )
 
 
-def resolve_asset_paths() -> tuple[Path, Path]:
-    """patched + vanilla rxdata paths (PyInstaller bundle, local assets/, or repo)."""
+def resolve_patched_asset_path() -> Path:
+    """patched rxdata path (PyInstaller bundle, local assets/, or repo)."""
     if getattr(sys, "frozen", False) and hasattr(sys, "_MEIPASS"):
-        base = Path(sys._MEIPASS)
-        return base / "patched_Scripts.rxdata", base / "vanilla_Scripts.rxdata"
+        return Path(sys._MEIPASS) / "patched_Scripts.rxdata"
     here = Path(__file__).resolve().parent
-    local = here / "assets"
-    p1 = local / "patched_Scripts.rxdata"
-    v1 = local / "vanilla_Scripts.rxdata"
-    if p1.is_file():
-        return p1, v1
-    repo_assets = here.parent / "fireash-scripatcher" / "app" / "src" / "main" / "assets"
-    return repo_assets / "patched_Scripts.rxdata", repo_assets / "vanilla_Scripts.rxdata"
+    local = here / "assets" / "patched_Scripts.rxdata"
+    if local.is_file():
+        return local
+    return (
+        here.parent
+        / "fireash-scripatcher"
+        / "app"
+        / "src"
+        / "main"
+        / "assets"
+        / "patched_Scripts.rxdata"
+    )
 
 
 # --- UI (NANDy-Man style: ttk.Frame, threading, root.after) ---
@@ -382,8 +375,8 @@ class FireAshEditUI:
             main,
             text=(
                 "Supported game: Pokémon Fire Ash 3.6 Part 2.2 only. Pick the folder that contains Data "
-                "(same as Android). Add mods creates Data/Scripts.rxdata.backup once. Remove mods uses that backup, "
-                "or bundled vanilla if no backup."
+                "(same as Android). Add mods creates Data/Scripts.rxdata.backup once. Remove mods restores only "
+                "from that backup."
             ),
             wraplength=640,
             font=("", 8),
@@ -602,7 +595,7 @@ class FireAshEditUI:
         ):
             return
 
-        patched_path, _ = resolve_asset_paths()
+        patched_path = resolve_patched_asset_path()
         if not patched_path.is_file():
             self._log(f"ERROR: Missing {patched_path}")
             messagebox.showerror(
@@ -642,14 +635,9 @@ class FireAshEditUI:
             messagebox.showwarning(APP_TITLE, "Choose the game folder first (or Scan C: for game).", parent=self.root)
             return
 
-        _, vanilla_path = resolve_asset_paths()
-        vanilla: bytes | None = None
-        if vanilla_path.is_file():
-            vanilla = vanilla_path.read_bytes()
-
         def work() -> None:
             try:
-                remove_mods(root, vanilla, lambda m: self.root.after(0, lambda: self._log(m)))
+                remove_mods(root, lambda m: self.root.after(0, lambda: self._log(m)))
                 self.root.after(0, lambda: self._log("Done."))
                 self.root.after(
                     0,

@@ -1,8 +1,7 @@
 namespace FireAsh.Edit.Pc;
 
 /// <summary>
-/// Same rules as the Android MainActivity: backup once, replace Scripts.rxdata;
-/// remove via backup rename/copy or bundled vanilla.
+/// Same rules as the Android app: backup once, replace Scripts.rxdata; remove restores from backup only.
 /// </summary>
 internal static class ScriptPatchOperations
 {
@@ -60,7 +59,7 @@ internal static class ScriptPatchOperations
         log?.Invoke("Add mods finished: Data/Scripts.rxdata is now the patched file.");
     }
 
-    public static void RemoveMods(string gameRoot, byte[]? bundledVanilla, Action<string>? log)
+    public static void RemoveMods(string gameRoot, Action<string>? log)
     {
         var dataDir = ResolveDataDirectory(gameRoot);
         var scriptsPath = Path.Combine(dataDir, "Scripts.rxdata");
@@ -71,14 +70,6 @@ internal static class ScriptPatchOperations
             log?.Invoke("Restoring from Scripts.rxdata.backup.");
             RestoreFromBackup(dataDir, scriptsPath, backupPath, log);
             log?.Invoke("Remove mods finished: restored from backup.");
-            return;
-        }
-
-        if (bundledVanilla != null && bundledVanilla.Length > 0)
-        {
-            log?.Invoke("No usable backup — restoring from bundled vanilla_Scripts.rxdata.");
-            ReplaceScriptsFromBytes(dataDir, scriptsPath, bundledVanilla, log);
-            log?.Invoke("Remove mods finished: restored vanilla scripts from app bundle.");
             return;
         }
 
@@ -104,19 +95,6 @@ internal static class ScriptPatchOperations
             log?.Invoke("Copied backup to Scripts.rxdata (rename not available).");
             TryDeleteWithRetry(backupPath, log);
         }
-    }
-
-    private static void ReplaceScriptsFromBytes(
-        string dataDir,
-        string scriptsPath,
-        byte[] bytes,
-        Action<string>? log)
-    {
-        var tmpPath = Path.Combine(dataDir, PatchTempName);
-        DeleteIfPresent(tmpPath, log);
-        File.WriteAllBytes(tmpPath, bytes);
-        TryDeleteWithRetry(scriptsPath, log);
-        TryMoveOrReplace(tmpPath, scriptsPath, log);
     }
 
     private static void TryMoveOrReplace(string tmpPath, string scriptsPath, Action<string>? log)

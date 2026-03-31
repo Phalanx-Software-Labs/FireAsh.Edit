@@ -17,8 +17,5 @@
     <None Include="..\..\fireash-scripatcher\app\src\main\assets\patched_Scripts.rxdata" Link="patched_Scripts.rxdata">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="..\..\fireash-scripatcher\app\src\main\assets\vanilla_Scripts.rxdata" Link="vanilla_Scripts.rxdata">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
 </Project>
