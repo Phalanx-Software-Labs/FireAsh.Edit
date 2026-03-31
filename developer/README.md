@@ -15,13 +15,18 @@
 
 ## Download for users
 
-At the **repository root**: **`FireAsh.Edit.apk`**.
+Tell players to use **Releases**, not the green **Code** button or “Download ZIP.”
 
-Raw link (for direct installs):
+**Releases:** **[github.com/Phalanx-Software-Labs/FireAsh.Edit/releases](https://github.com/Phalanx-Software-Labs/FireAsh.Edit/releases)**
 
-**https://github.com/Phalanx-Software-Labs/FireAsh.Edit/raw/main/FireAsh.Edit.apk**
+Under **Assets** on the latest (or platform-specific) release:
 
-Install on your device, grant folder access, pick the game folder that contains **`Data`**, then use **Add mods** or **Remove mods**.
+- **`FireAsh.Edit.apk`** — Android  
+- **`FireAsh.Edit.exe`** — Windows (no Python required)
+
+**Android:** Install the APK, grant folder access, pick the game folder that contains **`Data`**, then **Add mods** or **Remove mods**.
+
+**Windows:** Run the `.exe`, then **Scan C: for game** or **Choose game folder**, then **Add mods** or **Remove mods**.
 
 **In-game (after Add mods):** **Pause → Mods** — **Party** (shiny, IV, EV, stats, Pokémon details, moves), **Bag** (quantities, add items), **Trainer** (money), and related options.
 
@@ -47,7 +52,7 @@ That runs version verify (unless skipped), `package_mod.rb`, `inject_mod.rb`, an
 Then:
 
 1. **Build → Build APK** in Android Studio.
-2. Copy `fireash-scripatcher/app/build/outputs/apk/debug/app-debug.apk` to the repo root as **`FireAsh.Edit.apk`**, commit, and push.
+2. Publish for players: attach the built APK (e.g. rename/copy **`app-debug.apk`** to **`FireAsh.Edit.apk`**) to a **[GitHub Release](https://github.com/Phalanx-Software-Labs/FireAsh.Edit/releases)** under **Assets**. Optionally also commit **`FireAsh.Edit.apk`** at the repo root if you still want a stable raw link on `main`.
 
 ### Windows PC helper
 
