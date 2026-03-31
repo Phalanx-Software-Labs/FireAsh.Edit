@@ -3,6 +3,8 @@
 !/.gitignore
 !/FireAsh.Edit.apk
 !/FireAsh_Vanilla_Scripts.rxdata
+!/.github/
+!/fireash-pc-patcher/
 !/scripts/
 !/scripts/sync_patched_scripts_to_apk.ps1
 !/scripts/verify_fire_ash_scripts_version.rb

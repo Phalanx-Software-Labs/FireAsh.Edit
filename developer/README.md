@@ -48,3 +48,13 @@ Then:
 
 1. **Build → Build APK** in Android Studio.
 2. Copy `fireash-scripatcher/app/build/outputs/apk/debug/app-debug.apk` to the repo root as **`FireAsh.Edit.apk`**, commit, and push.
+
+### Windows PC helper (one download for players)
+
+Players only need **`FireAsh.Edit.exe`**. It already contains Python, tkinter, and the patch files. No separate installs.
+
+**Publishing on GitHub:** push `fireash-pc-patcher/` and `.github/` (root `.gitignore` allows both). In the repo, open **Actions → “Build FireAsh.Edit (Windows)” → Run workflow**, then download the **artifact** zip and attach **`FireAsh.Edit.exe`** to a **Release** (or let people download the artifact).
+
+**Before the workflow or a local build:** either copy `patched_Scripts.rxdata` and `vanilla_Scripts.rxdata` into **`fireash-pc-patcher/assets/`**, or keep the full tree and run **`sync_patched_scripts_to_apk.ps1`** so `fireash-scripatcher/.../assets/` exists.
+
+Local build (optional): `fireash-pc-patcher/build_installer.ps1` also produces `dist/FireAsh.Edit.exe`. Inno Setup is optional (extra “setup wizard”); the `.exe` alone is enough for users.

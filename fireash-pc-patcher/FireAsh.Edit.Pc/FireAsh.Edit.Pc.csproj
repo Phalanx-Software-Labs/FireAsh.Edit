@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <AssemblyName>FireAsh.Edit</AssemblyName>
+    <RootNamespace>FireAsh.Edit.Pc</RootNamespace>
+    <Version>1.0.0</Version>
+    <Product>FireAsh.Edit for Windows</Product>
+    <Description>Applies the same Fire Ash script patch as the Android app to a PC install.</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\fireash-scripatcher\app\src\main\assets\patched_Scripts.rxdata" Link="patched_Scripts.rxdata">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\fireash-scripatcher\app\src\main\assets\vanilla_Scripts.rxdata" Link="vanilla_Scripts.rxdata">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+</Project>
