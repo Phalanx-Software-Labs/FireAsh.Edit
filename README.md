@@ -1,41 +1,57 @@
-# FireAsh.Edit
+📂 FireAsh.Edit
 
-**FireAsh.Edit** is a small helper for **Pokémon Fire Ash v3.6 Part 2.2** on **Android** and **Windows**. It installs or removes a **script-only** patch so the game gets an in-game **Mods** menu (party, bag, trainer, and related options).
+A real-time, script-injected editor for Fire Ash v3.6 Part 2.2.
 
-**Supported game:** that **one** Fire Ash build only. Other versions are not supported.
+FireAsh.Edit is a specialized tool for Android and Windows that injects a custom interface directly into the game. It functions as an in-game editor, allowing you to modify internal values (Party, Bag, Trainer stats) while you play.
 
----
+## ⚙️ How it Works
 
-## Download (for players)
+- **Script injection:** The tool updates **`Data/Scripts.rxdata`**, creates a backup (**`Scripts.rxdata.backup`**), and injects custom code to provide a new functional menu.
+- **Live editing:** Modify your bag contents, party levels, or trainer data without leaving the game or using external save-file editors.
+- **Safe reversal:** Removing the tool deletes the modified script and restores your original backup.
+- **Save persistence:** Any changes made to your data (items added, stats changed) remain on your save file even after the editor is removed.
 
-Do **not** use the green **Code** button or “Download ZIP” — that is source code, not the app.
+## 📥 Download & Installation
 
-1. Open **[Releases](https://github.com/Phalanx-Software-Labs/FireAsh.Edit/releases)** for this repository.
-2. Pick the latest release (or the one labeled **Windows** / **Android** if we split them).
-3. Under **Assets**, download:
-   - **`FireAsh.Edit.apk`** for **Android**
-   - **`FireAsh.Edit.exe`** for **Windows**
+> [!IMPORTANT]
+> Do not use the green **Code** button or **Download ZIP.** Those are source files for developers.
 
-### Android
+1. Go to **[Releases](https://github.com/Phalanx-Software-Labs/FireAsh.Edit/releases)**.
+2. Download the asset for your platform:
+   - **Android:** `FireAsh.Edit.apk`
+   - **Windows:** `FireAsh.Edit.exe`
 
-- Install the APK (you may need to allow installs from your browser or file app).
-- In the app, choose the game folder that contains **`Data`**, then use **Add mods** or **Remove mods**.
+### 📱 Android
 
-### Windows
+- Install the APK (allow “Unknown sources” if prompted).
+- Point the app to the game folder containing the **Data** directory.
+- Select **Add mods** to inject the editor or **Remove mods** to revert.
 
-- Double-click **`FireAsh.Edit.exe`**. You do **not** need to install Python.
-- If Windows shows **“Windows protected your PC”**, choose **More info** → **Run anyway** (the app is not signed by Microsoft yet).
+### 💻 Windows
+
+- Run **FireAsh.Edit.exe** (no Python installation required).
+- If Windows shows **“Windows protected your PC”**, click **More info** → **Run anyway**.
 - Use **Scan C: for game** or **Choose game folder**, then **Add mods** or **Remove mods**.
 
----
+**In-game:** After **Add mods**, use **Pause → Mods** to open the editor.
 
-## For project owners (publishing builds)
+## ⚠️ Critical compatibility & warnings
 
-Short checklist: **[RELEASING.md](RELEASING.md)**  
-Technical notes: **[developer/README.md](developer/README.md)**
+- **Version specific:** Built exclusively for **Fire Ash v3.6 Part 2.2.** Do not use on other versions.
+- **Stuck toggles:** Some options (such as “Always Shiny”) behave like a switch. If you **Remove mods** while a toggle is still ON, the effect can stay active because the vanilla game has no menu to turn it OFF. **Fix:** Add mods again, turn the option off in-game, then remove mods.
+- **Data restoration:** Removing the tool restores the original game **scripts**; it does **not** undo changes already written to your save (items, stats, etc.).
 
----
+## 🛡️ Disclaimer & liability
 
-## License / project
+This software is provided **“as-is”** without warranty of any kind, express or implied. By using this tool, you acknowledge and agree that:
 
-Maintained by **Phalanx Software Labs**. Game content and Pokémon are owned by their respective rights holders; this project is an independent fan tool for a specific fan game build.
+- **User responsibility:** You are solely responsible for any modifications made to your game files.
+- **Data loss:** The tool creates backups, but modifying scripts always carries some risk. **Back up your save files** before use.
+- **No liability:** The authors and copyright holders are not liable for any claim, damages, or other liability arising from use of this software.
+- **Non-official:** This is an independent fan-made tool. It is not affiliated with, endorsed by, or approved by the creators of Fire Ash or related IP holders.
+
+## 🛠️ Project info
+
+Maintained by **Phalanx Software Labs.** Fire Ash content and related assets are owned by their respective rights holders.
+
+Publishing builds: **[RELEASING.md](RELEASING.md)** · Technical notes: **[developer/README.md](developer/README.md)**
