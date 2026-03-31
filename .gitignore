@@ -1,6 +1,7 @@
 # Root of the repo is for the downloadable APK only. Everything else lives under developer/.
 /*
 !/.gitignore
+!/RELEASING.md
 !/FireAsh.Edit.apk
 !/FireAsh_Vanilla_Scripts.rxdata
 !/.github/
