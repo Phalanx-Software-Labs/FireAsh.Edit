@@ -1,3 +1,14 @@
+## Live repository — development vs. stable releases
+
+This repository is an **active working copy** of the project: files are updated frequently while features are still being designed and tested.
+
+- **Unreleased work in the tree:** Anything in the repo may include **features that are not part of an official release yet**. Those features may be **incomplete**, **unstable**, or **changed or removed** before they ever ship.
+- **Where stable builds live:** **Reliable, release-tested versions** are the ones published on **[Releases](https://github.com/Phalanx-Software-Labs/FireAsh.Edit/releases)**. The **`.apk`** and **`.exe`** attached to a **Release** are what we treat as **stable** for that version.
+- **Binaries inside the repo are not the same as Releases:** Any **`.apk`**, **`.exe`**, or other packaged output that appears **inside project folders** (for example under development or build paths) may be **newer than a Release**, **experimental**, or **not fully tested**. Do **not** assume they match the quality of a Release download.
+- **Risk if you skip Releases:** Installing or running an **`.apk`** or **`.exe`** obtained **outside** the **Releases** page—for example by grabbing a file from a folder in this repo, or by building the project yourself from the latest source—may **break your game**, **corrupt your save**, or behave in ways we have not signed off on. **You use those at your own risk.** For everyday play, **always use the downloads on the Releases page**.
+
+---
+
 📂 FireAsh.Edit
 
 A real-time, script-injected editor for Fire Ash v3.6 Part 2.2.
@@ -14,7 +25,7 @@ FireAsh.Edit is a specialized tool for Android and Windows that injects a custom
 ## 📥 Download & Installation
 
 > [!IMPORTANT]
-> Do not use the green **Code** button or **Download ZIP.** Those are source files for developers.
+> Do not use the green **Code** button or **Download ZIP** expecting a finished app. That gives **source and project files** for developers, which may include **in-progress** work (see **Live repository** above). **Do not** hunt through the repo for an **`.apk`** or **`.exe`**—only the **Releases** downloads are promoted as **stable**.
 
 1. Go to **[Releases](https://github.com/Phalanx-Software-Labs/FireAsh.Edit/releases)**.
 2. Download the asset for your platform:
@@ -45,6 +56,7 @@ FireAsh.Edit is a specialized tool for Android and Windows that injects a custom
 
 This software is provided **“as-is”** without warranty of any kind, express or implied. By using this tool, you acknowledge and agree that:
 
+- **Development copies:** If you use builds or binaries **other than** those from **[Releases](https://github.com/Phalanx-Software-Labs/FireAsh.Edit/releases)**, you accept the extra risk described under **Live repository** above.
 - **User responsibility:** You are solely responsible for any modifications made to your game files.
 - **Data loss:** The tool creates backups, but modifying scripts always carries some risk. **Back up your save files** before use.
 - **No liability:** The authors and copyright holders are not liable for any claim, damages, or other liability arising from use of this software.
