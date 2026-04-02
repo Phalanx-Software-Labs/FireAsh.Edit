@@ -67,5 +67,3 @@ This software is provided **“as-is”** without warranty of any kind, express 
 ## 🛠️ Project info
 
 Maintained by **Phalanx Software Labs.** Fire Ash content and related assets are owned by their respective rights holders.
-
-Publishing builds: **[RELEASING.md](RELEASING.md)** · Technical notes: **[developer/README.md](developer/README.md)**
