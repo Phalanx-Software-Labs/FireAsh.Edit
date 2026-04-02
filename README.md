@@ -1,3 +1,5 @@
+developed on windows with help from Cursor AI, tested on retroid pocket 6 and windows.
+
 ## Live repository — development vs. stable releases
 
 This repository is an **active working copy** of the project: files are updated frequently while features are still being designed and tested.
