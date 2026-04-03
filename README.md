@@ -37,14 +37,14 @@ FireAsh.Edit is a specialized tool for Android and Windows that injects a custom
 ### 📱 Android
 
 - Install the APK (allow “Unknown sources” if prompted).
-- Point the app to the game folder containing the **Data** directory.
+- Point the app to the game folder containing the **Data** directory. this is the folder named "Game" in the standard download. it contains the game.exe the audio, data, graphics, etc. folders.
 - Select **Add mods** to inject the editor or **Remove mods** to revert.
 
 ### 💻 Windows
 
 - Run **FireAsh.Edit.exe** (no Python installation required).
 - If Windows shows **“Windows protected your PC”**, click **More info** → **Run anyway**.
-- Use **Scan C: for game** or **Choose game folder**, then **Add mods** or **Remove mods**.
+- Use **Scan C: for game** or **Choose game folder**, then **Add mods** or **Remove mods**. when selecting the folder, chose the folder named "Game" in the standard instal of the game. this is the folder that contains the game.exe, audio, data, etc. folders.
 
 **In-game:** After **Add mods**, use **Pause → Mods** to open the editor.
 
