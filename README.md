@@ -9,6 +9,7 @@ Due to the massive scale of Pokémon Fire Ash, the base game and its engine are 
 Risk of Corruption: Any outside influence on your game scripts carries a risk of save file corruption. Always back up your save data before applying updates.
 
 "Stable" vs. "Bug-Free": A stable release means features are tested and working as intended under normal conditions. It does not guarantee they won't interact unpredictably with the game's massive event library.
+
 Support: Bugs are addressed as they are discovered. By using these mods, you accept that you do so at your own risk.
 
 - **Unreleased work in the tree:** Anything in the repo may include **features that are not part of an official release yet**. Those features may be **incomplete**, **unstable**, or **changed or removed** before they ever ship.
