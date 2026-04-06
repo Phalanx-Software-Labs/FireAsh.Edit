@@ -7,6 +7,7 @@ This repository is an **active working copy** of the project: files are updated 
  ⚠️ Disclaimer & Save Safety
 Due to the massive scale of Pokémon Fire Ash, the base game and its engine are under constant stress. Even "Stable" releases of these mods may carry inherent risks:
 Risk of Corruption: Any outside influence on your game scripts carries a risk of save file corruption. Always back up your save data before applying updates.
+
 "Stable" vs. "Bug-Free": A stable release means features are tested and working as intended under normal conditions. It does not guarantee they won't interact unpredictably with the game's massive event library.
 Support: Bugs are addressed as they are discovered. By using these mods, you accept that you do so at your own risk.
 
