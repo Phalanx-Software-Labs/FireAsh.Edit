@@ -4,6 +4,12 @@ developed on windows with help from Cursor AI, tested on retroid pocket 6 and wi
 
 This repository is an **active working copy** of the project: files are updated frequently while features are still being designed and tested.
 
+ ⚠️ Disclaimer & Save Safety
+Due to the massive scale of Pokémon Fire Ash, the base game and its engine are under constant stress. Even "Stable" releases of these mods may carry inherent risks:
+Risk of Corruption: Any outside influence on your game scripts carries a risk of save file corruption. Always back up your save data before applying updates.
+"Stable" vs. "Bug-Free": A stable release means features are tested and working as intended under normal conditions. It does not guarantee they won't interact unpredictably with the game's massive event library.
+Support: Bugs are addressed as they are discovered. By using these mods, you accept that you do so at your own risk.
+
 - **Unreleased work in the tree:** Anything in the repo may include **features that are not part of an official release yet**. Those features may be **incomplete**, **unstable**, or **changed or removed** before they ever ship.
 - **Where stable builds live:** **Reliable, release-tested versions** are the ones published on **[Releases](https://github.com/Phalanx-Software-Labs/FireAsh.Edit/releases)**. The **`.apk`** and **`.exe`** attached to a **Release** are what we treat as **stable** for that version.
 - **Binaries inside the repo are not the same as Releases:** Any **`.apk`**, **`.exe`**, or other packaged output that appears **inside project folders** (for example under development or build paths) may be **newer than a Release**, **experimental**, or **not fully tested**. Do **not** assume they match the quality of a Release download.
