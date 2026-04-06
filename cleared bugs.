@@ -2,3 +2,7 @@ surf
 the bug. the surf issue was found to not be related to this software. some official downloads are so large they sometimes dont unzip properly. if that happens, some settings get stuck at baseline values. this can cause all water tiles to be tagged as not surfable.
 the fix. when injecting the mods, the injector checks the tile markers. if water tiles are surfable, nothing changes. if they are not, the injector fixes them.
 the fun. this means some tiles that were likely never meant to be surfed can not be surfed. you can run face first into the black wall of doom that marks the edge of the visible map.
+
+level cap
+the bug. level cap does not reset when moving to a new region. game sees you have 8 badges for Johto and puts the level cap at 44 in kanto.
+the fix. level cap now calls on the same data your trainer card calls on to know when youve entered a new region.
