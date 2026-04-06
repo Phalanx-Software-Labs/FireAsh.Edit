@@ -1,12 +1,4 @@
-Issue 1: Surf field-move interaction failure (Orange Islands)
-Conditions: Active testing; currently scanning engine and save data via Marshal to verify flags and condition triggers.
-Details:
-Surf was obtained early via the "Add Item" mod.
-Move was taught prior to collecting the specific badge required for overworld usage.
-Status: Investigating whether the engine requires a specific Global Switch or if the early item injection bypassed a necessary script trigger.
-
-
-Issue 2: Stat-editing inconsistency (Value Mismatch/Reset)
+Issue 1: Stat-editing inconsistency (Value Mismatch/Reset)
 Context: When setting base stats or current stats to values exceeding standard game limits, the in-game party screen reflects an inconsistent number.
 In some cases, the value does not match the input.
 In other cases, the value matches initially but reverts or "sanitizes" back to a lower number after a period.
