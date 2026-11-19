@@ -1,3 +1,11 @@
+> **Supported Game Version:** Version 3.6 (Part 2.2)  
+> **Playing a newer version?** Please check the **Pull Requests** tab for community compatibility updates.
+>
+> **Maintenance Note:** I no longer have the setup required to actively test or maintain this project. Community PRs for new game versions are welcome—please include test screenshots or notes in your PR so others know it's verified!  
+>
+> If you are interested in taking over maintenance of this project, please open an **Issue** on this repository.
+
+
 developed on windows with help from Cursor AI, tested on retroid pocket 6 and windows.
 
 ## Live repository — development vs. stable releases
